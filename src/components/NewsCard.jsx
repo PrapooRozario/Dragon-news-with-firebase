@@ -1,10 +1,10 @@
 import { AiOutlineEye } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
-  console.log(news);
-  const { title, author, thumbnail_url, details, total_view, rating } = news;
+  const { title, author, thumbnail_url, details, total_view, rating , _id} = news;
 
   return (
     <div className="bg-white overflow-hidden border">
@@ -30,9 +30,9 @@ const NewsCard = ({ news }) => {
         <h2 className="text-lg font-bold text-gray-800">{title}</h2>
 
         <p className="text-sm text-gray-600 mt-2 line-clamp-3">{details}</p>
-        <button className="text-blue-500 text-sm font-semibold mt-3">
+        <Link to={`/news/${_id}`} className="text-blue-500 text-sm font-semibold mt-3">
           Read More
-        </button>
+        </Link>
 
         <div className="flex items-center justify-between mt-4">
           <div className="flex items-center text-yellow-500">
